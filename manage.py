@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 
 if __name__ == "__main__":
-    project_folder = os.path.expanduser('~/PycharmProjects/otus_dz7_site_otus/')
+    project_folder = os.getcwd()
     load_dotenv(os.path.join(project_folder, '.env'))
 
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_site_otus.settings')
