@@ -19,3 +19,9 @@ class LessonSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Lesson
         fields = ('id', 'title', 'description', 'module_of_course', 'homework')
+
+
+class TeacherSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Teacher
+        fields = ('id', 'name', 'courses')

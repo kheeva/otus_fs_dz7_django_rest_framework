@@ -5,3 +5,4 @@ from . import models
 admin.site.register(models.Course)
 admin.site.register(models.CourseModule)
 admin.site.register(models.Lesson)
+admin.site.register(models.Teacher)
