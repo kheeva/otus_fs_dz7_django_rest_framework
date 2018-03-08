@@ -19,7 +19,9 @@ class Base(MiddlewareConfigMixin, Configuration):
 
     SECRET_KEY = values.SecretValue()
 
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ['127.0.0.1',
+                     '128.68.53.62'
+    ]
 
     INSTALLED_APPS = [
         'django.contrib.admin',
