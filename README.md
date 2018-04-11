@@ -67,6 +67,7 @@ Getting list of courses:
 Filtering some fields:
 
 `http://127.0.0.1:8000/api/courses/?fields=title,price`
+
 `http://127.0.0.1:8000/api/courses/?fields!=id`
 
 Filter by content inside fields:
