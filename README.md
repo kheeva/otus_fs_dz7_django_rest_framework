@@ -60,7 +60,18 @@ Read the documentation and customize settings.
 python manage.py runserver 0.0.0.0:8000
 ```
 
-Connect via broser to `http://127.0.0.1:8000/your_urls`
+Getting list pf courses 
+`http://127.0.0.1:8000/api/courses/`
+
+Filtering some fields
+`http://127.0.0.1:8000/api/courses/?fields=title,price`
+
+Filter by content inside fields
+`http://127.0.0.1:8000/api/courses/?search=Python`
+
+Different filters in one request
+`http://127.0.0.1:8000/api/courses/?fields=title,price&search=Python&price=9500`
+
 
 # Project Goals
 
