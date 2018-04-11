@@ -60,16 +60,21 @@ Read the documentation and customize settings.
 python manage.py runserver 0.0.0.0:8000
 ```
 
-Getting list pf courses 
-`http://127.0.0.1:8000/api/courses/`
+Getting list of courses:
 
-Filtering some fields
+```http://127.0.0.1:8000/api/courses/```
+
+Filtering some fields:
+
 `http://127.0.0.1:8000/api/courses/?fields=title,price`
+`http://127.0.0.1:8000/api/courses/?fields!=id`
 
-Filter by content inside fields
+Filter by content inside fields:
+
 `http://127.0.0.1:8000/api/courses/?search=Python`
 
-Different filters in one request
+Different filters in one request:
+
 `http://127.0.0.1:8000/api/courses/?fields=title,price&search=Python&price=9500`
 
 
