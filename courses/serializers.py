@@ -1,12 +1,13 @@
 from rest_framework import serializers
+from drf_queryfields import QueryFieldsMixin
 
 from . import models
 
 
-class CourseSerializer(serializers.ModelSerializer):
+class CourseSerializer(QueryFieldsMixin, serializers.ModelSerializer):
     class Meta:
         model = models.Course
-        fields = ('id', 'title', 'description')
+        fields = ('id', 'title', 'description', 'teachers', 'price', 'img_url')
 
 
 class CourseModuleSerializer(serializers.ModelSerializer):

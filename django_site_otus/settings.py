@@ -13,6 +13,9 @@ class MiddlewareConfigMixin:
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
     ]
 
+    REST_FRAMEWORK = {
+        'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+    }
 
 class Base(MiddlewareConfigMixin, Configuration):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,7 +34,9 @@ class Base(MiddlewareConfigMixin, Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'django_extensions',
+
         'rest_framework',
+        'django_filters',
         'courses',
     ]
 
@@ -79,7 +84,7 @@ class Base(MiddlewareConfigMixin, Configuration):
 
     LANGUAGE_CODE = 'en-us'
 
-    TIME_ZONE = 'UTC'
+    TIME_ZONE = 'Europe/Moscow'
 
     USE_I18N = True
 
@@ -87,8 +92,17 @@ class Base(MiddlewareConfigMixin, Configuration):
 
     USE_TZ = True
 
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
     STATIC_URL = '/static/'
 
+    STATICFILES_DIRS = (
+        ("courses/img", os.path.join(STATIC_ROOT, 'courses/img')),
+    )
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+    MEDIA_URL = '/media/'
 
 class Dev(Base):
     DEBUG = values.BooleanValue(True)

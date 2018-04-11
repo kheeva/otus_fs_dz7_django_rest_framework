@@ -4,7 +4,15 @@ from django.db import models
 class Course(models.Model):
     title = models.CharField(max_length=512)
     description = models.TextField()
-    teachers = models.ForeignKey('Teacher', on_delete=models.CASCADE)
+    teachers = models.ForeignKey('Teacher', on_delete=models.CASCADE, related_name='courses')
+    price = models.IntegerField(null=True, blank=True)
+    img_url = models.ImageField(
+        verbose_name='Фото',
+        max_length=150,
+        null=True,
+        blank=True,
+        #upload_to='static/courses/img/'
+    )
 
     def __str__(self):
         return self.title
